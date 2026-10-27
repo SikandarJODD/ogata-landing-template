@@ -35,12 +35,14 @@
 		"typescript": "^6.0.3",
 		"vite": "^8.3.0"
 	},
-	"imports": {
-		"#lib": "./src/lib/index.js",
-		"#lib/*": "./src/lib/*"
-	},
 	"dependencies": {
 		"mode-watcher": "^1.1.0",
 		"runed": "^0.38.0"
+	},
+	"imports": {
+		"#lib": "./src/lib/index.js",
+		"#lib/*": "./src/lib/*",
+		"#blocks": "./src/lib/components/blocks/index.js",
+		"#blocks/*": "./src/lib/components/blocks/*"
 	}
 }

@@ -1,14 +1,7 @@
 <script lang="ts">
-	import * as NavigationMenu from "$lib/components/ui/navigation-menu/index";
-	import type { HTMLAttributes } from "svelte/elements";
-	import LinkItem from "./link-item.svelte";
-	import { companyLinks, companyLinks2, productLinks } from "./nav-links";
-
-	type ListItemProps = HTMLAttributes<HTMLAnchorElement> & {
-		title: string;
-		href: string;
-		content: string;
-	};
+	import * as NavigationMenu from '#lib/components/ui/navigation-menu/index.ts';
+	import LinkItem from './link-item.svelte';
+	import { companyLinks, companyLinks2, productLinks } from './nav-links';
 </script>
 
 <NavigationMenu.Root class="hidden md:flex">
@@ -17,9 +10,7 @@
 			<NavigationMenu.Trigger class="bg-transparent">Product</NavigationMenu.Trigger>
 			<NavigationMenu.Content class="NavigationMenuContent p-0">
 				<div class="bg-muted/50 p-1 pr-1.5 dark:bg-background">
-					<div
-						class="grid w-lg grid-cols-2 gap-2 rounded-lg border bg-popover p-2 shadow"
-					>
+					<div class="grid w-lg grid-cols-2 gap-2 rounded-lg border bg-popover p-2 shadow">
 						{#each productLinks as item, i}
 							<NavigationMenu.Link>
 								<LinkItem {...item} />
@@ -28,10 +19,8 @@
 					</div>
 					<div class="p-2">
 						<p class="text-sm text-muted-foreground">
-							Interested?{" "}
-							<a class="font-medium text-foreground hover:underline" href="/">
-								Schedule a demo
-							</a>
+							Interested?{' '}
+							<a class="font-medium text-foreground hover:underline" href="/"> Schedule a demo </a>
 						</p>
 					</div>
 				</div>
@@ -51,7 +40,7 @@
 						</div>
 						<div class="space-y-2 p-3">
 							{#each companyLinks2 as item, i}
-								{@const IconComp = item.icon}
+								{const IconComp = $state(item.icon)}
 								<NavigationMenu.Link>
 									<div class="flex items-center gap-2">
 										<IconComp />
