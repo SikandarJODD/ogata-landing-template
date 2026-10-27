@@ -43,7 +43,9 @@
 <section class="py-16 md:py-24">
 	<div class="mx-auto max-w-6xl px-6">
 		<div class="grid gap-12 md:grid-cols-2 md:gap-6">
-			<h2 class="max-w-sm text-4xl font-medium tracking-tight text-balance text-foreground">
+			<h2
+				class="max-w-sm text-3xl font-medium tracking-tight text-balance text-foreground md:text-4xl"
+			>
 				Frequently Asked Questions
 			</h2>
 

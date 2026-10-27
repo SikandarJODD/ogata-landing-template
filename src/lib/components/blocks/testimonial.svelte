@@ -110,29 +110,33 @@
 	<div class="py-16 md:py-32">
 		<div class="mx-auto max-w-6xl px-6">
 			<div class="text-center">
-				<h2 class="text-title text-3xl font-semibold">Loved by the Community</h2>
-				<p class="text-body mt-6">Harum quae dolore orrupti aut temporibus ariatur.</p>
+				<h2 class="text-title text-3xl font-semibold md:text-4xl">Loved by the Community</h2>
+				<p class="text-body mt-6 text-muted-foreground">
+					Harum quae dolore orrupti aut temporibus ariatur.
+				</p>
 			</div>
 			<div class="mt-8 grid gap-3 sm:grid-cols-2 md:mt-12 lg:grid-cols-3">
-				{#each testimonialChunks as chunk, chunkIndex}
+				{#each testimonialChunks as chunk, chunkIndex (chunkIndex)}
 					<div class="space-y-3 *:border-none *:shadow-none">
-						{#each chunk as { name, role, quote, image }, index}
+						{#each chunk as { name, role, quote, image } (name)}
 							<Card class="bg-muted dark:bg-zinc-900">
-								<CardContent class="grid grid-cols-[auto_1fr] gap-3">
-									<Avatar class="size-9">
-										<AvatarImage alt={name} src={image} loading="lazy" width="120" height="120" />
-										<AvatarFallback>ST</AvatarFallback>
-									</Avatar>
+								<CardContent class="flex flex-col gap-3">
+									<div class="flex items-center gap-3">
+										<Avatar class="size-9">
+											<AvatarImage alt={name} src={image} loading="lazy" width="120" height="120" />
+											<AvatarFallback>ST</AvatarFallback>
+										</Avatar>
 
-									<div>
-										<h3 class="font-medium">{name}</h3>
+										<div>
+											<h3 class="font-medium">{name}</h3>
 
-										<span class="block text-sm tracking-wide text-muted-foreground">{role}</span>
-
-										<blockquote class="mt-3">
-											<p class="text-gray-700 dark:text-gray-300">{quote}</p>
-										</blockquote>
+											<span class="block text-sm tracking-wide text-muted-foreground">{role}</span>
+										</div>
 									</div>
+
+									<blockquote>
+										<p class="text-gray-700 dark:text-gray-300">{quote}</p>
+									</blockquote>
 								</CardContent>
 							</Card>
 						{/each}

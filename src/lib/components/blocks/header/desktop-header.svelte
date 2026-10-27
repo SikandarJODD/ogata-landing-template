@@ -4,7 +4,10 @@
 	import { navItems } from './nav.js';
 </script>
 
-<nav class="fixed top-0 z-20 hidden w-full bg-background lg:block" aria-label="Primary">
+<nav
+	class="fixed top-0 z-20 hidden w-full bg-background/50 backdrop-blur-md lg:block"
+	aria-label="Primary"
+>
 	<div class="mx-auto max-w-6xl px-6">
 		<div class="flex h-14 items-center justify-between">
 			<div class="flex items-center gap-12">
@@ -12,15 +15,17 @@
 					<Logo class="size-5" />
 				</a>
 
-				<ul class="flex gap-8 text-sm">
+				<ul class="flex gap-2 text-sm">
 					{#each navItems as item (item.name)}
 						<li>
-							<a
+							<Button
+								size="sm"
+								variant="ghost"
 								href={item.href}
-								class="block text-muted-foreground transition-colors duration-150 hover:text-accent-foreground"
+								class="text-muted-foreground transition-colors duration-150 hover:text-accent-foreground"
 							>
 								{item.name}
-							</a>
+							</Button>
 						</li>
 					{/each}
 				</ul>

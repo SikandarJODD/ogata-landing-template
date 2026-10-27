@@ -21,7 +21,7 @@
 	}: Props = $props();
 </script>
 
-<section class="@container bg-background py-24">
+<section class="@container bg-background py-6 md:py-24">
 	<div class="mx-auto max-w-3xl px-6">
 		<Card variant="outline" class="p-8 md:p-12">
 			<Badge variant="emerald" class="mb-6 rounded-full px-3 text-xs">{eyebrow}</Badge>
