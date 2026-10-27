@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@lucasmarkes/hairline':
+        specifier: ^0.5.1
+        version: 0.5.1
       mode-watcher:
         specifier: ^1.1.0
         version: 1.1.0(svelte@5.57.2)
@@ -115,6 +118,14 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@lucasmarkes/hairline@0.5.1':
+    resolution: {integrity: sha512-zjY3bdMC3As/+enKitZ1X+D1HjpesQiAKzG1sbCFsOrb5xIuJEoepkJTBIO4jmFh6JXOQlGGylhV71nr9ipNpQ==}
+    peerDependencies:
+      react: '>=18'
+    peerDependenciesMeta:
+      react:
+        optional: true
 
   '@lucide/svelte@1.61.0':
     resolution: {integrity: sha512-Vwj4ADoKgVogLFpEbXv2PS2hh2fj+aAqPuiNydI88Zkyb1l7veL4fXgRrOX3tgpESHhIGneNkSSYhHupvCBshg==}
@@ -1126,6 +1137,8 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.6.0
+
+  '@lucasmarkes/hairline@0.5.1': {}
 
   '@lucide/svelte@1.61.0(svelte@5.57.2)':
     dependencies:
