@@ -30,5 +30,9 @@
 	"imports": {
 		"#lib": "./src/lib/index.js",
 		"#lib/*": "./src/lib/*"
+	},
+	"dependencies": {
+		"mode-watcher": "^1.1.0",
+		"runed": "^0.38.0"
 	}
 }
