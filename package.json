@@ -37,6 +37,7 @@
 	},
 	"dependencies": {
 		"mode-watcher": "^1.1.0",
+		"motion-sv": "^0.2.2",
 		"runed": "^0.38.0"
 	},
 	"imports": {
