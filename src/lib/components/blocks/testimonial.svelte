@@ -118,7 +118,7 @@
 					<div class="space-y-3 *:border-none *:shadow-none">
 						{#each chunk as { name, role, quote, image }, index}
 							<Card class="bg-muted dark:bg-zinc-900">
-								<CardContent class="grid grid-cols-[auto_1fr] gap-3 pt-6">
+								<CardContent class="grid grid-cols-[auto_1fr] gap-3">
 									<Avatar class="size-9">
 										<AvatarImage alt={name} src={image} loading="lazy" width="120" height="120" />
 										<AvatarFallback>ST</AvatarFallback>

@@ -27,11 +27,11 @@
 <section>
 	<div class="mx-auto w-full max-w-6xl px-6 py-24">
 		<div>
-			<h2 class="max-w-2xl text-4xl font-semibold text-balance text-foreground">
+			<h2 class="max-w-2xl text-3xl font-semibold text-balance text-foreground md:text-4xl">
 				Empowering developers with AI-driven solutions
 			</h2>
 		</div>
-		<div class="mt-16 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+		<div class="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:mt-16 lg:grid-cols-3">
 			<Card variant="soft" class="overflow-hidden p-6">
 				<Target class="size-5 text-primary" />
 				<h3 class="mt-5 text-lg font-semibold text-foreground">AI Code Generation</h3>

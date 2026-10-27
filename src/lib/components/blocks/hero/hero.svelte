@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 	import { Button } from '#lib/components/ui/dusk/button/index.js';
-	import Header from './header.svelte';
+	import Header from '#lib/components/blocks/header/header.svelte';
 	import LogoCloud from './logo-cloud.svelte';
 	import Badge from '#lib/components/spell/badge/badge.svelte';
 </script>
@@ -26,7 +26,7 @@
 			<div
 				class="mx-auto mt-8 mb-12 flex max-w-3xl flex-col justify-center gap-6 text-center md:gap-8"
 			>
-				<h1 class="text-4xl font-medium tracking-tight text-balance md:text-5xl">
+				<h1 class="text-3xl font-medium tracking-tight text-balance md:text-5xl">
 					Next gen CRM: Customer universe, beautifully connected
 				</h1>
 				<Button href="/" class="mx-auto w-fit" size="lg">Get Started</Button>
