@@ -1,18 +1,19 @@
 <script lang="ts">
-	import X from "@lucide/svelte/icons/x";
-	import Logo from "#lib/components/web/Logo.svelte";
-	import { Button } from "#lib/components/ui/dusk/button/index.js";
-	import { watch } from "runed";
+	import X from '@lucide/svelte/icons/x';
+	import Logo from '#lib/components/web/Logo.svelte';
+	import { Button } from '#lib/components/ui/dusk/button/index.js';
+	import { watch } from 'runed';
+	import { MenuIcon } from '@lucide/svelte';
 
 	const menuItems = [
-		{ name: "Product", href: "/" },
-		{ name: "Solutions", href: "/" },
-		{ name: "Pricing", href: "/" },
-		{ name: "Company", href: "/" },
+		{ name: 'Product', href: '/' },
+		{ name: 'Solutions', href: '/' },
+		{ name: 'Pricing', href: '/' },
+		{ name: 'Company', href: '/' }
 	];
 
 	let menuState = $state(false);
-	let menuButton: HTMLButtonElement;
+	let menuButton: HTMLButtonElement | null = $state(null);
 	const id = $props.id();
 	const menuId = `${id}-menu`;
 
@@ -21,17 +22,17 @@
 		(isOpen) => {
 			if (!isOpen) return;
 
-			const mediaQuery = window.matchMedia("(max-width: 1023px)");
+			const mediaQuery = window.matchMedia('(max-width: 1023px)');
 			const updateOverflow = () => {
-				document.documentElement.classList.toggle("overflow-hidden", mediaQuery.matches);
+				document.documentElement.classList.toggle('overflow-hidden', mediaQuery.matches);
 			};
 
 			updateOverflow();
-			mediaQuery.addEventListener("change", updateOverflow);
+			mediaQuery.addEventListener('change', updateOverflow);
 
 			return () => {
-				mediaQuery.removeEventListener("change", updateOverflow);
-				document.documentElement.classList.remove("overflow-hidden");
+				mediaQuery.removeEventListener('change', updateOverflow);
+				document.documentElement.classList.remove('overflow-hidden');
 			};
 		}
 	);
@@ -41,9 +42,9 @@
 	}
 
 	function handleKeydown(event: KeyboardEvent) {
-		if (event.key === "Escape" && menuState) {
+		if (event.key === 'Escape' && menuState) {
 			closeMenu();
-			menuButton.focus();
+			menuButton?.focus();
 		}
 	}
 </script>
@@ -52,37 +53,34 @@
 
 <header>
 	<nav
-		data-state={menuState && "active"}
+		data-state={menuState && 'active'}
 		class="fixed top-0 z-20 w-full bg-background max-lg:data-[state=active]:bottom-0"
 	>
-		<div class="mx-auto max-w-7xl px-6">
-			<div class="relative flex flex-wrap items-center justify-between gap-6 py-5 lg:gap-0">
+		<div class="mx-auto max-w-6xl px-6">
+			<div
+				class="relative flex h-12 flex-wrap items-center justify-between gap-6 md:h-14 md:py-0 lg:gap-0"
+			>
 				<div class="flex w-full items-center justify-between gap-12 lg:w-auto">
-					<a href="/" aria-label="Home" class="flex items-center space-x-2">
-						<Logo />
+					<a href="/" aria-label="Home">
+						<Logo class="size-5" />
 					</a>
 
-					<button
-						bind:this={menuButton}
+					<Button
+						bind:ref={menuButton}
 						onclick={() => (menuState = !menuState)}
-						aria-label={menuState ? "Close Menu" : "Open Menu"}
+						aria-label={menuState ? 'Close Menu' : 'Open Menu'}
 						aria-controls={menuId}
 						aria-expanded={menuState}
-						class="relative z-20 block cursor-pointer after:absolute after:-inset-4 lg:hidden"
+						class="lg:hidden"
+						size="icon-lg"
+						variant="ghost"
 					>
-						<span
-							aria-hidden="true"
-							class="m-auto flex size-4.5 flex-col items-center justify-center gap-[7px] transition-[transform,opacity] duration-200 in-data-[state=active]:scale-0 in-data-[state=active]:rotate-180 in-data-[state=active]:opacity-0 motion-reduce:transition-none"
-						>
-							<span class="h-0.5 w-full rounded-full bg-foreground"></span>
-							<span class="h-0.5 w-full rounded-full bg-foreground"></span>
-						</span>
-
-						<X
-							aria-hidden="true"
-							class="absolute inset-0 m-auto size-6 -translate-x-[3px] scale-0 -rotate-180 opacity-0 transition-[transform,opacity] duration-200 in-data-[state=active]:scale-100 in-data-[state=active]:rotate-0 in-data-[state=active]:opacity-100 motion-reduce:transition-none"
-						/>
-					</button>
+						{#if menuState}
+							<X />
+						{:else}
+							<MenuIcon />
+						{/if}
+					</Button>
 
 					<div class="max-lg:hidden">
 						<ul class="flex gap-8 text-sm">
@@ -120,12 +118,8 @@
 						</ul>
 					</div>
 
-					<div
-						class="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit"
-					>
-						<Button href="/" size="sm" variant="outline" onclick={closeMenu}
-							>Login</Button
-						>
+					<div class="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+						<Button href="/" size="sm" variant="outline" onclick={closeMenu}>Login</Button>
 						<Button href="/" size="sm" onclick={closeMenu}>Sign Up</Button>
 					</div>
 				</div>

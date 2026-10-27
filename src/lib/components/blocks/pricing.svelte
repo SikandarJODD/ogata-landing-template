@@ -29,16 +29,16 @@
 		'Standard Security Features'
 	];
 
-	let enterPrisesItems: string[] = [
-		'Everything in Startup Plan',
-		'Unlimited Cloud Storage',
-		'Unlimited User Access',
-		'Daily Product Updates'
-	];
+	// let enterPrisesItems: string[] = [
+	// 	'Everything in Startup Plan',
+	// 	'Unlimited Cloud Storage',
+	// 	'Unlimited User Access',
+	// 	'Daily Product Updates'
+	// ];
 </script>
 
 <section class="py-16 md:py-20">
-	<div class="mx-auto max-w-7xl px-6">
+	<div class="mx-auto max-w-6xl px-6">
 		<div class="max-w-sm space-y-6">
 			<h1
 				class="text-4xl font-medium tracking-tight text-balance text-muted-foreground lg:text-5xl"
@@ -48,7 +48,7 @@
 		</div>
 
 		<div
-			class="mt-12 grid gap-1.5 border *:p-6 max-lg:mx-auto max-lg:max-w-sm lg:mt-20 lg:grid-cols-4"
+			class="mt-12 grid gap-1.5 border *:p-6 max-lg:mx-auto max-lg:max-w-sm lg:mt-20 lg:grid-cols-3"
 		>
 			<div class="flex flex-col gap-8 max-lg:border-b lg:border-r">
 				<div>
@@ -116,7 +116,7 @@
 				</ul>
 			</div>
 
-			<div class="flex flex-col gap-8 max-lg:border-t lg:border-l">
+			<!-- <div class="flex flex-col gap-8 max-lg:border-t lg:border-l">
 				<div>
 					<p class="text-lg font-medium">Enterprise</p>
 					<p class="text-lg font-medium text-muted-foreground">For large organizations</p>
@@ -136,7 +136,7 @@
 						</li>
 					{/each}
 				</ul>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </section>

@@ -10,7 +10,7 @@
 
 <main class="overflow-x-hidden">
 	<section class="pt-24 lg:pt-40">
-		<div class="mx-auto max-w-7xl px-6">
+		<div class="mx-auto max-w-6xl px-6">
 			<a
 				href="/"
 				class="mx-auto flex w-fit items-center gap-2 rounded-full border border-muted py-1 pr-2.5 pl-1 font-normal"

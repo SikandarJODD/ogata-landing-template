@@ -116,7 +116,7 @@
 </script>
 
 <footer class="border-b bg-white pt-20 dark:bg-transparent">
-	<div class="mx-auto max-w-5xl px-6">
+	<div class="mx-auto max-w-6xl px-6">
 		<div class="grid gap-12 md:grid-cols-5">
 			<div class="md:col-span-2">
 				<a href="/" aria-label="go home" class="block size-fit">

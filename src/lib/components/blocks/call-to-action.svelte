@@ -22,11 +22,11 @@
 </script>
 
 <section class="@container bg-background py-24">
-	<div class="mx-auto max-w-2xl px-6">
+	<div class="mx-auto max-w-3xl px-6">
 		<Card variant="outline" class="p-8 md:p-12">
 			<Badge variant="emerald" class="mb-6 rounded-full px-3 text-xs">{eyebrow}</Badge>
-			<h2 class="font-serif text-3xl font-medium text-balance md:text-4xl">{title}</h2>
-			<p class="mt-4 max-w-md text-balance text-muted-foreground">
+			<h2 class="text-3xl font-medium text-balance md:text-4xl">{title}</h2>
+			<p class="mt-4 max-w-xl text-muted-foreground">
 				{description}
 			</p>
 			<Button href={ctaHref} class="mt-8 gap-2">
