@@ -154,7 +154,9 @@
 				{ label: 'Team tools', color: 'var(--visual-2)' },
 				{ label: 'Product activity', color: 'var(--visual-3)' }
 			] as source (source.label)}
-				<div class="flex items-center gap-3 rounded-xl bg-background p-3 shadow-xs">
+				<div
+					class="flex items-center gap-3 rounded-xl bg-background p-3 shadow-xs transition-transform duration-150 ease-out hover:translate-x-1 motion-reduce:transition-none motion-reduce:hover:translate-x-0"
+				>
 					<span class="size-2 rounded-full" style:background-color={source.color}></span>
 					<span class="text-sm font-medium text-foreground">{source.label}</span>
 				</div>
@@ -203,7 +205,7 @@
 				{ title: 'Deliver', description: 'Move approved work forward.', color: 'var(--visual-3)' }
 			] as stage, index (stage.title)}
 				<motion.div
-					class="relative rounded-xl bg-card p-4 shadow-xs"
+					class="relative rounded-xl bg-card p-4 shadow-xs transition-transform duration-150 ease-out hover:-translate-y-0.5 hover:scale-[1.01] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100"
 					initial={enterFrom(0, 10, 0.985)}
 					animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
 					transition={enterTransition(index * 0.04)}
@@ -269,14 +271,18 @@
 			<p class="font-medium text-foreground">Activity</p>
 			<div class="mt-8 flex h-32 items-end gap-2">
 				{#each activityBars as bar, index (`${bar.height}-${index}`)}
-					<div class="flex h-full flex-1 items-end overflow-hidden rounded-sm bg-muted">
-						<motion.div
-							class="h-full w-full origin-bottom rounded-sm"
-							style={{ backgroundColor: bar.color }}
-							initial={motionEnabled ? { scaleY: 0 } : { scaleY: bar.height / 100 }}
-							animate={{ scaleY: bar.height / 100 }}
-							transition={enterTransition(0.04 + index * 0.035)}
-						/>
+					<div class="group/bar flex h-full flex-1 items-end">
+						<div
+							class="flex h-full w-full items-end overflow-hidden rounded-sm bg-muted transition-transform duration-150 ease-out group-hover/bar:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover/bar:translate-y-0"
+						>
+							<motion.div
+								class="h-full w-full origin-bottom rounded-sm"
+								style={{ backgroundColor: bar.color }}
+								initial={motionEnabled ? { scaleY: 0 } : { scaleY: bar.height / 100 }}
+								animate={{ scaleY: bar.height / 100 }}
+								transition={enterTransition(0.04 + index * 0.035)}
+							/>
+						</div>
 					</div>
 				{/each}
 			</div>
