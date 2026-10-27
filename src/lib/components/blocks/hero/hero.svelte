@@ -3,6 +3,7 @@
 	import { Button } from '#lib/components/ui/dusk/button/index.js';
 	import Header from './header.svelte';
 	import LogoCloud from './logo-cloud.svelte';
+	import Badge from '#lib/components/spell/badge/badge.svelte';
 </script>
 
 <Header />
@@ -10,9 +11,15 @@
 <main class="overflow-x-hidden">
 	<section class="pt-24 lg:pt-40">
 		<div class="mx-auto max-w-7xl px-6">
-			<a href="/" class="mx-auto flex w-fit items-center gap-2 font-medium">
-				<span>New</span>
-				<span class="text-muted-foreground">Introducing Tailark Dusk 1.0</span>
+			<a
+				href="/"
+				class="mx-auto flex w-fit items-center gap-2 rounded-full border border-muted py-1 pr-2.5 pl-1 font-normal"
+			>
+				<!-- <span class="rounded-full bg-amber-100 px-2 py-1 text-[10px] font-medium text-amber-500"
+					>New</span
+				> -->
+				<Badge variant="emerald" size="sm" class="rounded-full px-2 py-1 text-[10px]">New</Badge>
+				<span class="text-sm text-muted-foreground">Introducing Tailark Dusk 1.0</span>
 				<ArrowRight class="size-3.5" />
 			</a>
 
