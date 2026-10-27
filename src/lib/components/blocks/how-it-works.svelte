@@ -49,13 +49,13 @@
 	let motionEnabled = $derived(animateSelection && !reducedMotion.current);
 
 	const activityBars = [
-		{ height: 38, color: 'var(--chart-1)' },
-		{ height: 54, color: 'var(--chart-2)' },
-		{ height: 46, color: 'var(--chart-3)' },
-		{ height: 70, color: 'var(--chart-4)' },
-		{ height: 62, color: 'var(--chart-5)' },
-		{ height: 84, color: 'var(--chart-2)' },
-		{ height: 76, color: 'var(--chart-1)' }
+		{ height: 38, color: 'var(--visual-2)' },
+		{ height: 54, color: 'var(--visual-3)' },
+		{ height: 46, color: 'var(--visual-1)' },
+		{ height: 70, color: 'var(--visual-4)' },
+		{ height: 62, color: 'var(--visual-2)' },
+		{ height: 84, color: 'var(--visual-5)' },
+		{ height: 76, color: 'var(--visual-3)' }
 	];
 
 	function selectStep(index: number, event: MouseEvent) {
@@ -99,7 +99,7 @@
 						class="group relative flex min-h-24 w-full gap-4 rounded-xl p-4 text-left data-[active=true]:bg-card data-[active=true]:shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
 					>
 						<span
-							class="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-medium text-muted-foreground tabular-nums group-aria-pressed:bg-foreground group-aria-pressed:text-background"
+							class="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-medium text-muted-foreground tabular-nums"
 						>
 							{index + 1}
 						</span>
@@ -116,6 +116,7 @@
 			<div
 				id={visualId}
 				class="relative flex min-h-96 items-center justify-center overflow-hidden rounded-3xl bg-muted/60 p-5 sm:p-8 lg:min-h-[30rem]"
+				style="--visual-1: oklch(0.64 0.2 295); --visual-2: oklch(0.7 0.17 295); --visual-3: oklch(0.76 0.14 295); --visual-4: oklch(0.82 0.11 295); --visual-5: oklch(0.88 0.08 295);"
 			>
 				<div class="grid w-full max-w-xl">
 					<AnimatePresence initial={false} mode="sync">
@@ -149,9 +150,9 @@
 	<div aria-hidden="true" class="grid items-center gap-4 sm:grid-cols-[1fr_auto_1.15fr]">
 		<div class="space-y-3">
 			{#each [
-				{ label: 'Customer data', color: 'var(--chart-1)' },
-				{ label: 'Team tools', color: 'var(--chart-2)' },
-				{ label: 'Product activity', color: 'var(--chart-3)' }
+				{ label: 'Customer data', color: 'var(--visual-1)' },
+				{ label: 'Team tools', color: 'var(--visual-2)' },
+				{ label: 'Product activity', color: 'var(--visual-3)' }
 			] as source (source.label)}
 				<div class="flex items-center gap-3 rounded-xl bg-background p-3 shadow-xs">
 					<span class="size-2 rounded-full" style:background-color={source.color}></span>
@@ -168,7 +169,7 @@
 			<div class="flex items-center justify-between gap-4 pb-4">
 				<span class="font-medium text-foreground">Shared workspace</span>
 				<span class="flex items-center gap-1.5 text-xs text-muted-foreground">
-					<span class="size-1.5 rounded-full bg-chart-3"></span>
+					<span class="size-1.5 rounded-full bg-[var(--visual-2)]"></span>
 					Connected
 				</span>
 			</div>
@@ -177,9 +178,9 @@
 				<div class="h-2 w-full rounded-full bg-foreground/10"></div>
 				<div class="h-2 w-3/5 rounded-full bg-foreground/10"></div>
 				<div class="grid grid-cols-3 gap-2 pt-3">
-					<div class="h-16 rounded-lg bg-chart-1/12"></div>
-					<div class="h-16 rounded-lg bg-chart-2/12"></div>
-					<div class="h-16 rounded-lg bg-chart-3/12"></div>
+					<div class="h-16 rounded-lg bg-[var(--visual-1)] opacity-15"></div>
+					<div class="h-16 rounded-lg bg-[var(--visual-2)] opacity-15"></div>
+					<div class="h-16 rounded-lg bg-[var(--visual-3)] opacity-15"></div>
 				</div>
 			</div>
 		</div>
@@ -189,17 +190,17 @@
 {#snippet ConfigureVisual()}
 	<div aria-hidden="true" class="rounded-2xl bg-background p-4 shadow-sm sm:p-6">
 		<div class="flex items-center gap-2 pb-4">
-			<span class="size-2 rounded-full bg-chart-1"></span>
-			<span class="size-2 rounded-full bg-chart-2"></span>
-			<span class="size-2 rounded-full bg-chart-3"></span>
+			<span class="size-2 rounded-full bg-[var(--visual-1)]"></span>
+			<span class="size-2 rounded-full bg-[var(--visual-2)]"></span>
+			<span class="size-2 rounded-full bg-[var(--visual-3)]"></span>
 			<span class="ml-2 text-sm font-medium text-muted-foreground">Product workflow</span>
 		</div>
 
 		<div class="grid gap-3 pt-2 sm:grid-cols-3">
 			{#each [
-				{ title: 'Collect', description: 'Bring new work into one place.', color: 'var(--chart-1)' },
-				{ title: 'Review', description: 'Keep decisions clear and visible.', color: 'var(--chart-2)' },
-				{ title: 'Deliver', description: 'Move approved work forward.', color: 'var(--chart-3)' }
+				{ title: 'Collect', description: 'Bring new work into one place.', color: 'var(--visual-1)' },
+				{ title: 'Review', description: 'Keep decisions clear and visible.', color: 'var(--visual-2)' },
+				{ title: 'Deliver', description: 'Move approved work forward.', color: 'var(--visual-3)' }
 			] as stage, index (stage.title)}
 				<motion.div
 					class="relative rounded-xl bg-card p-4 shadow-xs"
@@ -246,7 +247,7 @@
 						transition={enterTransition(0.035 + index * 0.035)}
 					>
 						<motion.span
-							class="flex size-6 items-center justify-center rounded-full bg-chart-3 text-background"
+							class="flex size-6 items-center justify-center rounded-full bg-[var(--visual-2)] text-background"
 							initial={motionEnabled ? { scale: 0.92 } : { scale: 1 }}
 							animate={{ scale: 1 }}
 							transition={enterTransition(0.06 + index * 0.035)}
